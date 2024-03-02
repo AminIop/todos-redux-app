@@ -22,6 +22,8 @@ const CounterByOneView = ({ countValue, isPending, error }) => {
 
 CounterByOneView.propTypes = {
   countValue: PropTypes.number.isRequired,
+  isPending : PropTypes.bool.isRequired,
+  error : PropTypes.string.isRequired
 }
 
 export default CounterByOneView
