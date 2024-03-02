@@ -1,8 +1,11 @@
 import React from 'react'
+import { CounterByOne } from './components/counter'
 
 function App() {
   return (
-    <div>My hello world message</div>
+    <>
+      <CounterByOne />
+    </>
   )
 }
 
