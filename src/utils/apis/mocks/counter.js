@@ -1,8 +1,8 @@
 const apisCounterMocks = {
     getCountValue: () => {
-        new Promise((resolve) => {
+        return new Promise((resolve) => {
             return setTimeout(() => resolve({
-                data: { value: -8 }
+                data: { value: 5 }
             }), 3000)
         })
     }

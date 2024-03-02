@@ -3,6 +3,7 @@ export const CounterActionsTypes = {
         INCREMENT: 'count.byOne.increment',
         DECREMENT: 'count.byOne.decrement',
         RESET: 'count.byOne.reset',
+        GET : 'count.byOne.get'
     },
     ByAmount: {
         INCREMENT: 'count.byAmount.increment',

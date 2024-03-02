@@ -27,6 +27,11 @@ const counterByOneReducer = (state = initialState.byOne, action) => {
                 ...state,
                 value: 0
             }
+        case CounterActionsTypes.ByOne.GET:
+            return {
+                ...state,
+                value: action.payload
+            }
         default:
             return state
     }
