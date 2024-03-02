@@ -1,10 +1,27 @@
 import React from 'react'
 import './counter.css'
+import PropTypes from 'prop-types'
+import { Increment } from './increment'
+import { Decrement } from './decrement'
 
-export default function CounterByOneView({ countValue }) {
+const CounterByOneView = ({ countValue, isPending, error }) => {
+  if (error) {
+    return <p>{{ error }}</p>
+  }
   return (
-    <>
-     <div className='counter-text'>Counter value : {countValue}</div>
-    </>
+    isPending ?
+      <p className='loading'>Loading ... </p>
+      :
+      <>
+        <div className='counter-text'>Counter value : {countValue}</div>
+        <Increment />
+        <Decrement />
+      </>
   )
 }
+
+CounterByOneView.propTypes = {
+  countValue: PropTypes.number.isRequired,
+}
+
+export default CounterByOneView
