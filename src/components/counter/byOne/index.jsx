@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
+
 import CounterByOneView from './view'
+//import apisCounterMocks from '../../../utils/apis/mocks/counter'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { getValueOfCounterByOneSelector } from '../../../store/selectors'
-import apisCounterMocks from '../../../utils/apis/mocks/counter'
-import { initializeByOneCreator } from '../../../store/actions-creator/counter'
+import { getCounterApiStartByOneCreator } from '../../../store/actions-creator/counter'
+//import { initializeByOneCreator } from '../../../store/actions-creator/counter'
 
 export const CounterByOne = () => {
 
-  const [isPending, setIsPending] = useState(false)
-  const [error, setError] = useState('')
+  /*const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState('')*/
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const myFnct = async () => {
+    dispatch(getCounterApiStartByOneCreator)
+    /*const myFnct = async () => {
       try{
         setIsPending(true)
         const res = await apisCounterMocks.getCountValue()
@@ -23,7 +27,7 @@ export const CounterByOne = () => {
         setIsPending(false)
       }
     }
-    myFnct()
+    myFnct()*/
   }, [])
 
   const count = useSelector(getValueOfCounterByOneSelector)

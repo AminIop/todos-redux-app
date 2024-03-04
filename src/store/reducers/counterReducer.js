@@ -3,7 +3,9 @@ import { CounterActionsTypes } from "../constants/actions-types"
 
 const initialState = {
     byOne: {
-        value: 0
+        value: 0,
+        loading: false,
+        error: null
     },
     byAmount: {
         value: 0
@@ -27,11 +29,25 @@ const counterByOneReducer = (state = initialState.byOne, action) => {
                 ...state,
                 value: 0
             }
-        case CounterActionsTypes.ByOne.GET:
+        case CounterActionsTypes.ByOne.GET.START:
             return {
                 ...state,
+                loading: true
+            }
+        case CounterActionsTypes.ByOne.GET.SUCCESS:
+            return {
+                ...state,
+                error: null,
+                loading: false,
                 value: action.payload
             }
+        case CounterActionsTypes.ByOne.GET.FAIL:
+            return {
+                ...state,
+                error: action.payload,
+                loading: false
+            }
+
         default:
             return state
     }
