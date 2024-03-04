@@ -25,20 +25,22 @@ export const initializeByOneCreator = value => {
     }
 }
 
-export const getCounterApiStartByOneCreator = _ => ({
-    type: ActionTypeCounter.BY_ONE.GET.START
-})
-
-export const getCounterApiByOneSuccessCreator = value =>{
+export const getCounterApiStartByOneCreator = _ => {
     return {
-        type : CounterActionsTypes.ByOne.GET.SUCCESS,
-        payload : value
+        type: CounterActionsTypes.ByOne.GET.START
     }
 }
 
-export const getCounterApiByOneFailureCreator = err =>{
+export const getCounterApiByOneSuccessCreator = value => {
     return {
-        type : CounterActionsTypes.ByOne.GET.FAIL,
-        payload : err
+        type: CounterActionsTypes.ByOne.GET.SUCCESS,
+        payload: value
+    }
+}
+
+export const getCounterApiByOneFailureCreator = err => {
+    return {
+        type: CounterActionsTypes.ByOne.GET.FAIL,
+        payload: err
     }
 }

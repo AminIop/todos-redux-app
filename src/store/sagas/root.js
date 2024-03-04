@@ -1,3 +1,5 @@
+import { takeLatest } from "redux-saga/effects";
+
 import { CounterActionsTypes } from "../constants/actions-types";
 import { handleGetValueByOne } from "./handlers/counter";
 

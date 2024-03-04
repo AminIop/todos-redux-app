@@ -15,7 +15,7 @@ export const CounterByOne = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getCounterApiStartByOneCreator)
+    dispatch(getCounterApiStartByOneCreator())
     /*const myFnct = async () => {
       try{
         setIsPending(true)
@@ -30,11 +30,11 @@ export const CounterByOne = () => {
     myFnct()*/
   }, [])
 
-  const count = useSelector(getValueOfCounterByOneSelector)
+  const { value, loading, error } = useSelector(getValueOfCounterByOneSelector)
 
   return (
     <>
-      <CounterByOneView countValue={count} isPending={isPending} error={error}/>
+      <CounterByOneView {...{ value, loading, error }} />
     </>
   )
 }
