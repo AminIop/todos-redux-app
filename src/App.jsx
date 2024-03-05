@@ -1,10 +1,10 @@
 import React from 'react'
-import { CounterByOne } from './components/counter'
+import { Counter } from './features'
 
 function App() {
   return (
     <>
-      <CounterByOne />
+      <Counter />
     </>
   )
 }

@@ -1,1 +1,0 @@
-export {getValueOfCounterByOneSelector} from './counter'

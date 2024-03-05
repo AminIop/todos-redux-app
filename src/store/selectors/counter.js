@@ -1,1 +1,0 @@
-export const getValueOfCounterByOneSelector = state => state.counter.ByOne.value
