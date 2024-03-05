@@ -1,0 +1,1 @@
+export const getUserPlaceHolderSelector = state => state.user.userPlaceHolder

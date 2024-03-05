@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Increment } from './increment'
 import { Decrement } from './decrement'
 
-const CounterByOneView = ({ value, loading, error }) => {
+const CounterByOneView = ({ data, loading, error }) => {
   if (error) {
     return <p>{{ error }}</p>
   }
@@ -13,7 +13,8 @@ const CounterByOneView = ({ value, loading, error }) => {
       <p className='loading'>Loading ... </p>
       :
       <>
-        <div className='counter-text'>Counter value : {value}</div>
+        <div className='counter-text'>Counter value : </div>
+        <p className='user'>{data?.name}</p>
         <Increment />
         <Decrement />
       </>
@@ -21,7 +22,7 @@ const CounterByOneView = ({ value, loading, error }) => {
 }
 
 CounterByOneView.propTypes = {
-  value: PropTypes.number.isRequired,
+  data: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.object
 }

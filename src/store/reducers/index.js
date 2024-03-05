@@ -2,6 +2,7 @@ import { combineReducers } from "redux"
 import { StoreTypes } from "../constants/stores-types"
 import todoReducer from "./todoReducer"
 import counterReducer from "./counterReducer"
+import userReducer from "./userReducer"
 
 const initialState = {
     todos: [
@@ -15,7 +16,8 @@ const initialState = {
 
 const rootReducer = combineReducers({
     [StoreTypes.CounterStore]: counterReducer,
-    [StoreTypes.TodoStore]: todoReducer
+    [StoreTypes.TodoStore]: todoReducer,
+    [StoreTypes.User] : userReducer
 })
 
 export default rootReducer
